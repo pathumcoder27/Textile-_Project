@@ -83,7 +83,7 @@ public class Tshirt_Dashboard extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(73, 155, 237));
 
         jLabel7.setBackground(new java.awt.Color(73, 155, 237));
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\nisal\\Documents\\NetBeansProjects\\Textile_Project_Official\\Textile-_Project\\images\\tshirt_from_whatsapp.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/tshirt_from_whatsapp.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

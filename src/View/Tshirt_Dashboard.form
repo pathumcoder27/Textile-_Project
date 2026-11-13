@@ -283,7 +283,7 @@
                       <Color blue="ed" green="9b" red="49" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\nisal\Documents\NetBeansProjects\Textile_Project_Official\Textile-_Project\images\tshirt_from_whatsapp.png"/>
+                      <Image iconType="3" name="/View/tshirt_from_whatsapp.png"/>
                     </Property>
                   </Properties>
                 </Component>
