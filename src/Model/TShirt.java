@@ -18,8 +18,7 @@ public class TShirt extends Cloth {
         this.sleeveLength = sleeveLength;
         
     }
-
-
+    
     @Override
     public String getCategory() { return "TShirt"; }
 
