@@ -49,7 +49,4 @@ public class Trouser extends Cloth{
     public void setWaist(double waist) {
         this.waist = waist;
     }
-
-   
-    
 }
