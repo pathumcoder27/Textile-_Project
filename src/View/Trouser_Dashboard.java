@@ -137,7 +137,7 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(73, 155, 237));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\nisal\\Documents\\NetBeansProjects\\Textile_Project_Official\\Textile-_Project\\images\\Trouser_Sizes.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Trouser_Sizes.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);

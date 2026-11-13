@@ -104,7 +104,7 @@ public class Main_Dashboard extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(73, 155, 237));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\nisal\\Documents\\NetBeansProjects\\Textile_Project_Official\\Textile-_Project\\images\\Main_Dashboard_image.jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Main_Dashboard_image.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
