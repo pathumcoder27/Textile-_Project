@@ -93,28 +93,28 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel4" min="-2" pref="131" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Component id="length" min="-2" pref="251" max="-2" attributes="0"/>
+                              <Component id="lengthSize" min="-2" pref="251" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="toleranceLength" min="-2" pref="226" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
-                                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Clear" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Search" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel2" min="-2" pref="131" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Component id="sleeveLength" min="-2" pref="251" max="-2" attributes="0"/>
+                              <Component id="sleeveLengthSize" min="-2" pref="251" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                               <Component id="toleranceSleeve" min="-2" pref="226" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel3" min="-2" pref="131" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Component id="shoulder" min="-2" pref="251" max="-2" attributes="0"/>
+                              <Component id="shoulderSize" min="-2" pref="251" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                               <Component id="toleranceShoulder" min="-2" pref="226" max="-2" attributes="0"/>
                           </Group>
@@ -131,25 +131,25 @@
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="sleeveLength" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="sleeveLengthSize" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="toleranceSleeve" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel3" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="shoulder" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="shoulderSize" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="toleranceShoulder" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="length" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="lengthSize" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="toleranceLength" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Search" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Clear" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -173,7 +173,7 @@
                 <Property name="text" type="java.lang.String" value="Sleeve Length :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="sleeveLength">
+            <Component class="javax.swing.JTextField" name="sleeveLengthSize">
             </Component>
             <Component class="javax.swing.JTextField" name="toleranceSleeve">
             </Component>
@@ -188,11 +188,11 @@
                 <Property name="text" type="java.lang.String" value="Shoulder size :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="shoulder">
+            <Component class="javax.swing.JTextField" name="shoulderSize">
             </Component>
             <Component class="javax.swing.JTextField" name="toleranceShoulder">
             </Component>
-            <Component class="javax.swing.JTextField" name="length">
+            <Component class="javax.swing.JTextField" name="lengthSize">
             </Component>
             <Component class="javax.swing.JTextField" name="toleranceLength">
             </Component>
@@ -207,7 +207,7 @@
                 <Property name="text" type="java.lang.String" value="Length :       "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="Search">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="5b" green="2e" red="2" type="rgb"/>
@@ -220,8 +220,11 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Search"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="Clear">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="5b" green="2e" red="2" type="rgb"/>

@@ -4,6 +4,13 @@
  */
 package View;
 
+import Controller.Shirt_Dashboard_Controller;
+import ImageGallery.ImageGallery;
+import Model.Shirt;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author USER
@@ -32,16 +39,16 @@ public class Shirt_Dashboard extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        sleeveLength = new javax.swing.JTextField();
+        sleeveLengthSize = new javax.swing.JTextField();
         toleranceSleeve = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        shoulder = new javax.swing.JTextField();
+        shoulderSize = new javax.swing.JTextField();
         toleranceShoulder = new javax.swing.JTextField();
-        length = new javax.swing.JTextField();
+        lengthSize = new javax.swing.JTextField();
         toleranceLength = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Search = new javax.swing.JButton();
+        Clear = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -72,14 +79,15 @@ public class Shirt_Dashboard extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Length :       ");
 
-        jButton1.setBackground(new java.awt.Color(2, 46, 91));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Search");
+        Search.setBackground(new java.awt.Color(2, 46, 91));
+        Search.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Search.setForeground(new java.awt.Color(255, 255, 255));
+        Search.setText("Search");
+        Search.addActionListener(this::SearchActionPerformed);
 
-        jButton2.setBackground(new java.awt.Color(2, 46, 91));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Clear");
+        Clear.setBackground(new java.awt.Color(2, 46, 91));
+        Clear.setForeground(new java.awt.Color(255, 255, 255));
+        Clear.setText("Clear");
 
         jPanel4.setBackground(new java.awt.Color(73, 155, 237));
 
@@ -110,24 +118,24 @@ public class Shirt_Dashboard extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
-                        .addComponent(length, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lengthSize, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(toleranceLength, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jButton2)
+                                .addComponent(Clear)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1))))
+                                .addComponent(Search))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
-                        .addComponent(sleeveLength, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(sleeveLengthSize, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
                         .addComponent(toleranceSleeve, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
-                        .addComponent(shoulder, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(shoulderSize, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
                         .addComponent(toleranceShoulder, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(39, 39, 39)
@@ -140,22 +148,22 @@ public class Shirt_Dashboard extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sleeveLength, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sleeveLengthSize, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(toleranceSleeve, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(shoulder, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(shoulderSize, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(toleranceShoulder, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(length, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lengthSize, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(toleranceLength, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(Search)
+                    .addComponent(Clear))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
@@ -206,6 +214,23 @@ public class Shirt_Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
+        // TODO add your handling code here:
+        Shirt_Dashboard_Controller a = new Shirt_Dashboard_Controller();
+        Double[] size = {Double.parseDouble(shoulderSize.getText()),Double.parseDouble(lengthSize.getText()),Double.parseDouble(sleeveLengthSize.getText()),Double.parseDouble(toleranceShoulder.getText())};
+        ArrayList<Shirt> searchResult = a.search(size);
+        if(searchResult!=null){
+            for (Shirt shirt : searchResult) {
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.addRow(new Object[] {shirt.getDesignId(),shirt.getBrand(),shirt.getSize(),shirt.getFloor(),shirt.getSleeveLength(),shirt.getShoulder(),shirt.getLength()});
+            ImageGallery img = new ImageGallery(searchResult);
+        }
+        }else{
+            JOptionPane.showMessageDialog(this, "we do not have any clothes that you serched for", "", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_SearchActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -232,8 +257,8 @@ public class Shirt_Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton Clear;
+    private javax.swing.JButton Search;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -244,9 +269,9 @@ public class Shirt_Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField length;
-    private javax.swing.JTextField shoulder;
-    private javax.swing.JTextField sleeveLength;
+    private javax.swing.JTextField lengthSize;
+    private javax.swing.JTextField shoulderSize;
+    private javax.swing.JTextField sleeveLengthSize;
     private javax.swing.JTextField toleranceLength;
     private javax.swing.JTextField toleranceShoulder;
     private javax.swing.JTextField toleranceSleeve;
