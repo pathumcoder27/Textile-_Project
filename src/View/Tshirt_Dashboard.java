@@ -4,15 +4,22 @@
  */
 package View;
 
+import Controller.TShirt_Dashboard_Controller;
+import ImageGallery.ImageGallery;
+import Model.Shirt;
+import Model.TShirt;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author USER
  */
 public class Tshirt_Dashboard extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Tshirt_Dashboard.class.getName());
 
-    
     public Tshirt_Dashboard() {
         initComponents();
     }
@@ -41,8 +48,8 @@ public class Tshirt_Dashboard extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        clear = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        Clear = new javax.swing.JButton();
+        Search = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -91,15 +98,16 @@ public class Tshirt_Dashboard extends javax.swing.JFrame {
                 .addGap(0, 10, Short.MAX_VALUE))
         );
 
-        clear.setBackground(new java.awt.Color(2, 46, 91));
-        clear.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        clear.setForeground(new java.awt.Color(255, 255, 255));
-        clear.setText("Clear");
+        Clear.setBackground(new java.awt.Color(2, 46, 91));
+        Clear.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Clear.setForeground(new java.awt.Color(255, 255, 255));
+        Clear.setText("Clear");
 
-        jButton4.setBackground(new java.awt.Color(2, 46, 91));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Search");
+        Search.setBackground(new java.awt.Color(2, 46, 91));
+        Search.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Search.setForeground(new java.awt.Color(255, 255, 255));
+        Search.setText("Search");
+        Search.addActionListener(this::SearchActionPerformed);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -127,9 +135,9 @@ public class Tshirt_Dashboard extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(clear)
+                                .addComponent(Clear)
                                 .addGap(82, 82, 82)
-                                .addComponent(jButton4))
+                                .addComponent(Search))
                             .addComponent(toleranceLength, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(27, 27, 27)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,8 +170,8 @@ public class Tshirt_Dashboard extends javax.swing.JFrame {
                             .addGap(84, 84, 84)))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(clear)
-                            .addComponent(jButton4))
+                            .addComponent(Clear)
+                            .addComponent(Search))
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -215,34 +223,33 @@ public class Tshirt_Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchActionPerformed
+        // TODO add your handling code here:
+        TShirt_Dashboard_Controller a = new TShirt_Dashboard_Controller();
+        Double[] size = {Double.parseDouble(shoulder.getText()), Double.parseDouble(length.getText()), Double.parseDouble(sleeveLength.getText()), Double.parseDouble(toleranceShoulder.getText())};
+        ArrayList<TShirt> searchResult = a.search(size);
+        ArrayList<String> c = new ArrayList<>();
+        if (searchResult != null) {
+            for (TShirt shirt : searchResult) {
+                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                model.addRow(new Object[]{shirt.getDesignId(), shirt.getBrand(), shirt.getSize(), shirt.getFloor(), shirt.getSleeveLength(), shirt.getShoulder(), shirt.getLength()});
+                c.add(String.valueOf(shirt.getDesignId()));
+            }
+
+            ImageGallery img = new ImageGallery(c);
+        } else {
+            JOptionPane.showMessageDialog(this, "we do not have any clothes that you serched for", "", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_SearchActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Tshirt_Dashboard().setVisible(true));
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton clear;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton Clear;
+    private javax.swing.JButton Search;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

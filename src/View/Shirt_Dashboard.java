@@ -220,16 +220,14 @@ public class Shirt_Dashboard extends javax.swing.JFrame {
         Shirt_Dashboard_Controller a = new Shirt_Dashboard_Controller();
         Double[] size = {Double.parseDouble(shoulderSize.getText()),Double.parseDouble(lengthSize.getText()),Double.parseDouble(sleeveLengthSize.getText()),Double.parseDouble(toleranceShoulder.getText())};
         ArrayList<Shirt> searchResult = a.search(size);
+        ArrayList<String> c = new ArrayList<>();
         if(searchResult!=null){
             for (Shirt shirt : searchResult) {
+            c.add(String.valueOf(shirt.getDesignId()));
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             model.addRow(new Object[] {shirt.getDesignId(),shirt.getBrand(),shirt.getSize(),shirt.getFloor(),shirt.getSleeveLength(),shirt.getShoulder(),shirt.getLength()});
-            ArrayList<String> c = new ArrayList<>();
-                for (Shirt shirt1 : searchResult) {
-                    c.add(String.valueOf(shirt.getDesignId()));
-                }
-            ImageGallery img = new ImageGallery(c);
         }
+            ImageGallery img = new ImageGallery(c);
         }else{
             JOptionPane.showMessageDialog(this, "we do not have any clothes that you serched for", "", JOptionPane.ERROR_MESSAGE);
         }
@@ -244,27 +242,7 @@ public class Shirt_Dashboard extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Shirt_Dashboard().setVisible(true));
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Clear;
