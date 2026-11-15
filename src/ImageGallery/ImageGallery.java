@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class ImageGallery extends JFrame {
 
-    public ImageGallery(ArrayList<Shirt> searchResult) { 
+    public ImageGallery(ArrayList<String> searchResult) { 
         
         setTitle("Image Gallery");
         setSize(600, 700); 
@@ -21,8 +21,8 @@ public class ImageGallery extends JFrame {
         
         String[] imagePaths = new String[searchResult.size()];
         int a = 0;
-        for (Shirt shirt : searchResult) {
-            imagePaths[a++] = "Clothes_Images\\"+String.valueOf(shirt.getDesignId())+".jpg";
+        for (String shirt : searchResult) {
+            imagePaths[a++] = "Clothes_Images\\"+shirt+".jpg";
         }
         
 

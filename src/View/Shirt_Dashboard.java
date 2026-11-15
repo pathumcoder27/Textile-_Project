@@ -88,6 +88,7 @@ public class Shirt_Dashboard extends javax.swing.JFrame {
         Clear.setBackground(new java.awt.Color(2, 46, 91));
         Clear.setForeground(new java.awt.Color(255, 255, 255));
         Clear.setText("Clear");
+        Clear.addActionListener(this::ClearActionPerformed);
 
         jPanel4.setBackground(new java.awt.Color(73, 155, 237));
 
@@ -223,13 +224,22 @@ public class Shirt_Dashboard extends javax.swing.JFrame {
             for (Shirt shirt : searchResult) {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             model.addRow(new Object[] {shirt.getDesignId(),shirt.getBrand(),shirt.getSize(),shirt.getFloor(),shirt.getSleeveLength(),shirt.getShoulder(),shirt.getLength()});
-            ImageGallery img = new ImageGallery(searchResult);
+            ArrayList<String> c = new ArrayList<>();
+                for (Shirt shirt1 : searchResult) {
+                    c.add(String.valueOf(shirt.getDesignId()));
+                }
+            ImageGallery img = new ImageGallery(c);
         }
         }else{
             JOptionPane.showMessageDialog(this, "we do not have any clothes that you serched for", "", JOptionPane.ERROR_MESSAGE);
         }
         
     }//GEN-LAST:event_SearchActionPerformed
+
+    private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_ClearActionPerformed
 
     /**
      * @param args the command line arguments
