@@ -26,6 +26,7 @@ public abstract class Cloth {
 
     //public abstract boolean fits(double[] measurements);
     public abstract String getCategory();
+    public abstract boolean fit(Double[] size);
 
     /**
      * @return the brand

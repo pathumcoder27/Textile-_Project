@@ -21,6 +21,16 @@ public class Trouser extends Cloth{
 
     @Override
     public String getCategory() { return "Trouser"; }
+    
+    @Override
+    public boolean fit(Double[] size){ // size = [length,waist,tolerance]
+        if(size[0]<=this.length && this.length<=size[0]+size[2]){
+            if(size[1]<=this.waist && this.waist<=size[1]+size[2]){
+                return true;
+            }
+        }
+        return false;
+    }
 
     /**
      * @return the length

@@ -21,6 +21,18 @@ public class TShirt extends Cloth {
     
     @Override
     public String getCategory() { return "TShirt"; }
+    
+    @Override
+    public boolean fit(Double[] size){ // size = [shoulder, length,sleeveLength,tolerance]
+        if(this.shoulder<=size[0]+size[3]){
+            if(this.length<=size[1]+size[3]){
+                if(this.sleeveLength<=size[2]+size[3]){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     /**
      * @return the shoulder

@@ -22,6 +22,18 @@ public class Shirt extends Cloth {
 
     @Override
     public String getCategory() { return "Shirt"; }
+    
+    @Override
+    public boolean fit(Double[] size){ // size = [shoulder, length,sleeveLength,tolerance]
+        if(size[0]<=this.getShoulder() && this.getShoulder()<=size[0]+size[3]){
+            if(size[1]<=this.getLength()&& this.getLength()<=size[1]+size[3]){
+                if(size[2]<=this.getSleeveLength() && this.getSleeveLength()<=size[2]+size[3]){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     /**
      * @return the shoulder
@@ -49,5 +61,19 @@ public class Shirt extends Cloth {
      */
     public void setLength(double length) {
         this.length = length;
+    }
+
+    /**
+     * @return the sleeveLength
+     */
+    public double getSleeveLength() {
+        return sleeveLength;
+    }
+
+    /**
+     * @param sleeveLength the sleeveLength to set
+     */
+    public void setSleeveLength(double sleeveLength) {
+        this.sleeveLength = sleeveLength;
     }
 }
