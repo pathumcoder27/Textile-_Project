@@ -1,0 +1,12 @@
+1001,101,CeylonWeave,S,1,FormalShirts,17.0,28.0,24.0
+1002,101,CeylonWeave,M,1,FormalShirts,18.0,29.0,24.5
+1003,101,CeylonWeave,L,1,FormalShirts,19.0,30.0,25.0
+1004,101,CeylonWeave,XL,1,FormalShirts,20.0,31.0,25.5
+1005,102,UrbanThread,S,1,CasualShirts,17.5,28.5,24.5
+1006,102,UrbanThread,M,1,CasualShirts,18.5,29.5,25.0
+1007,102,UrbanThread,L,1,CasualShirts,19.5,30.5,25.5
+1008,102,UrbanThread,XL,1,CasualShirts,20.5,31.5,26.0
+1009,103,Coastline,S,1,CasualShirts,16.5,27.5,23.5
+1010,103,Coastline,M,1,CasualShirts,17.5,28.5,24.0
+1011,103,Coastline,L,1,CasualShirts,18.5,29.5,24.5
+1012,103,Coastline,XL,1,CasualShirts,19.5,30.5,25.0
