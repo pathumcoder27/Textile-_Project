@@ -1,0 +1,12 @@
+2001,201,CeylonWeave,S,1,FormalTrousers,38.0,28.0
+2002,201,CeylonWeave,M,1,FormalTrousers,39.0,30.0
+2003,201,CeylonWeave,L,1,FormalTrousers,40.0,32.0
+2004,201,CeylonWeave,XL,1,FormalTrousers,41.0,34.0
+2005,202,UrbanThread,S,1,CasualTrousers,38.0,28.5
+2006,202,UrbanThread,M,1,CasualTrousers,39.0,30.5
+2007,202,UrbanThread,L,1,CasualTrousers,40.0,32.5
+2008,202,UrbanThread,XL,1,CasualTrousers,41.0,34.5
+2009,203,Coastline,S,1,CasualTrousers,37.5,28.0
+2010,203,Coastline,M,1,CasualTrousers,38.5,30.0
+2011,203,Coastline,L,1,CasualTrousers,39.5,32.0
+2012,203,Coastline,XL,1,CasualTrousers,40.5,34.0

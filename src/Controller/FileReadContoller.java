@@ -6,6 +6,7 @@ package Controller;
 
 import Model.Shirt;
 import Model.TShirt;
+import Model.Trouser;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import java.util.Scanner;
  */
 public class FileReadContoller {
 
-    public static ArrayList<Shirt> readShirtDetails() {
+     public static ArrayList<Shirt> readShirtDetails() {
         ArrayList<Shirt> shirtDetails = new ArrayList<>();
         try {
             Scanner myReader = new Scanner(new File("Shirt.txt"));
@@ -71,6 +72,35 @@ public class FileReadContoller {
         }
         if(shirtDetails.size()!=0){
             return shirtDetails;
+        }else{
+            return null;
+        }
+
+    }
+    
+    public static ArrayList<Trouser> readTrouserDetails() {
+        ArrayList<Trouser> trouserDetails = new ArrayList<>();
+        try {
+            Scanner myReader = new Scanner(new File("Trouser.txt"));
+            while (myReader.hasNextLine()) {
+                String line = myReader.nextLine();
+                String[] data = line.split(",");
+                int id = Integer.parseInt(data[0]);
+                int designid = Integer.parseInt(data[1]);
+                String brand = data[2];
+                String size = data[3];
+                int floor = Integer.parseInt(data[4]);
+                String section = data[5];
+                double length = Double.parseDouble(data[6]);
+                double waist = Double.parseDouble(data[7]);
+                trouserDetails.add(new Trouser(id, designid, brand, size, floor, section, length, waist));
+                
+            }
+        } catch (FileNotFoundException ex) {
+
+        }
+        if(trouserDetails.size()!=0){
+            return trouserDetails;
         }else{
             return null;
         }

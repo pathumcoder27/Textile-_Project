@@ -143,12 +143,12 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel3" min="-2" pref="71" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="waist" min="-2" pref="226" max="-2" attributes="0"/>
+                          <Component id="waistSize" min="-2" pref="226" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel2" min="-2" pref="71" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="length" min="-2" pref="226" max="-2" attributes="0"/>
+                          <Component id="lengthSize" min="-2" pref="226" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
@@ -178,12 +178,12 @@
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="length" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="lengthSize" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="toleranceLength" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="waist" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="waistSize" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="toleranceWaist" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
@@ -225,7 +225,7 @@
             <Property name="text" type="java.lang.String" value="Waist :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="length">
+        <Component class="javax.swing.JTextField" name="lengthSize">
           <Properties>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Text Cursor"/>
@@ -235,10 +235,10 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lengthActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lengthSizeActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="waist">
+        <Component class="javax.swing.JTextField" name="waistSize">
           <Properties>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Text Cursor"/>
@@ -248,7 +248,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="waistActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="waistSizeActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="toleranceWaist">

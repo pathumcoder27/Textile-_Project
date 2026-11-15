@@ -4,6 +4,12 @@
  */
 package View;
 
+import Controller.Trouser_Dashboard_Controller;
+import Model.Trouser;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author nisal
@@ -37,8 +43,8 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        length = new javax.swing.JTextField();
-        waist = new javax.swing.JTextField();
+        lengthSize = new javax.swing.JTextField();
+        waistSize = new javax.swing.JTextField();
         toleranceWaist = new javax.swing.JTextField();
         toleranceLength = new javax.swing.JTextField();
         search = new javax.swing.JButton();
@@ -108,13 +114,13 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Waist :");
 
-        length.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        length.setPreferredSize(new java.awt.Dimension(226, 22));
-        length.addActionListener(this::lengthActionPerformed);
+        lengthSize.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        lengthSize.setPreferredSize(new java.awt.Dimension(226, 22));
+        lengthSize.addActionListener(this::lengthSizeActionPerformed);
 
-        waist.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        waist.setPreferredSize(new java.awt.Dimension(226, 22));
-        waist.addActionListener(this::waistActionPerformed);
+        waistSize.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        waistSize.setPreferredSize(new java.awt.Dimension(226, 22));
+        waistSize.addActionListener(this::waistSizeActionPerformed);
 
         toleranceWaist.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         toleranceWaist.setPreferredSize(new java.awt.Dimension(226, 22));
@@ -167,11 +173,11 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(waist, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(waistSize, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(length, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lengthSize, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -193,11 +199,11 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(length, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lengthSize, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(toleranceLength, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(waist, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(waistSize, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(toleranceWaist, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -245,13 +251,13 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lengthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lengthActionPerformed
+    private void lengthSizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lengthSizeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lengthActionPerformed
+    }//GEN-LAST:event_lengthSizeActionPerformed
 
-    private void waistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_waistActionPerformed
+    private void waistSizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_waistSizeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_waistActionPerformed
+    }//GEN-LAST:event_waistSizeActionPerformed
 
     private void toleranceWaistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toleranceWaistActionPerformed
         // TODO add your handling code here:
@@ -263,6 +269,20 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         // TODO add your handling code here:
+        Trouser_Dashboard_Controller a = new Trouser_Dashboard_Controller();
+        Double[] size = {Double.parseDouble(lengthSize.getText()),Double.parseDouble(waistSize.getText()),Double.parseDouble(toleranceLength.getText())};
+        ArrayList<Trouser> searchResult = a.search(size);
+        ArrayList<String> c = new ArrayList<>();
+        if(searchResult!=null){
+            for (Trouser trouser : searchResult) {
+            c.add(String.valueOf(trouser.getDesignId()));
+            DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+            model.addRow(new Object[] {trouser.getDesignId(),trouser.getBrand(),trouser.getSize(),trouser.getFloor(),trouser.getLength(),trouser.getWaist()});
+        }
+           // ImageGallery img = new ImageGallery(c);
+        }else{
+            JOptionPane.showMessageDialog(this, "we do not have any clothes that you serched for", "", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_searchActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
@@ -309,10 +329,10 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField length;
+    private javax.swing.JTextField lengthSize;
     private javax.swing.JButton search;
     private javax.swing.JTextField toleranceLength;
     private javax.swing.JTextField toleranceWaist;
-    private javax.swing.JTextField waist;
+    private javax.swing.JTextField waistSize;
     // End of variables declaration//GEN-END:variables
 }
