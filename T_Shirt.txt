@@ -1,0 +1,12 @@
+2001,201,Urban Thread,S,2,Casual Tees,16.5,26.0,8.0
+2002,201,Urban Thread,M,2,Casual Tees,17.5,27.0,8.5
+2003,201,Urban Thread,L,2,Casual Tees,18.5,28.0,9.0
+2004,201,Urban Thread,XL,2,Casual Tees,19.5,29.0,9.5
+2005,202,Coastline,S,2,Sports Wear,17.0,26.5,8.5
+2006,202,Coastline,M,2,Sports Wear,18.0,27.5,9.0
+2007,202,Coastline,L,2,Sports Wear,19.0,28.5,9.5
+2008,202,Coastline,XL,2,Sports Wear,20.0,29.5,10.0
+2009,203,Northfield,S,2,Casual Tees,16.0,25.5,7.5
+2010,203,Northfield,M,2,Casual Tees,17.0,26.5,8.0
+2011,203,Northfield,L,2,Casual Tees,18.0,27.5,8.5
+2012,203,Northfield,XL,2,Casual Tees,19.0,28.5,9.0
