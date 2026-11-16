@@ -11,7 +11,7 @@ package Model;
 public class TShirt extends Cloth {
     private double shoulder, length,sleeveLength;
 
-    public TShirt(int id, int designId, String brand, String size, int floor, String section,double shoulder, double length, double sleeveLength) {
+    public TShirt(int id, int designId, String brand, String size, int floor, String section,double shoulder, double length, double sleeveLength){
         super(id, designId, brand, size, floor, section);
         this.shoulder = shoulder;
         this.length = length;
