@@ -5,6 +5,7 @@
 package View;
 
 import Controller.Trouser_Dashboard_Controller;
+import ImageGallery.ImageGallery;
 import Model.Trouser;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -45,12 +46,12 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         lengthSize = new javax.swing.JTextField();
         waistSize = new javax.swing.JTextField();
-        toleranceWaist = new javax.swing.JTextField();
         toleranceLength = new javax.swing.JTextField();
         search = new javax.swing.JButton();
         clear = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
 
@@ -122,10 +123,6 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
         waistSize.setPreferredSize(new java.awt.Dimension(226, 22));
         waistSize.addActionListener(this::waistSizeActionPerformed);
 
-        toleranceWaist.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        toleranceWaist.setPreferredSize(new java.awt.Dimension(226, 22));
-        toleranceWaist.addActionListener(this::toleranceWaistActionPerformed);
-
         toleranceLength.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         toleranceLength.setPreferredSize(new java.awt.Dimension(226, 22));
         toleranceLength.addActionListener(this::toleranceLengthActionPerformed);
@@ -163,6 +160,10 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Tolerance :");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -181,14 +182,14 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(toleranceLength, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(toleranceWaist, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(clear)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(search)))
+                        .addComponent(search))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(toleranceLength, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -196,16 +197,21 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lengthSize, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(toleranceLength, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lengthSize, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(17, 17, 17))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(waistSize, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(toleranceWaist, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(toleranceLength, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(search)
@@ -259,10 +265,6 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_waistSizeActionPerformed
 
-    private void toleranceWaistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toleranceWaistActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_toleranceWaistActionPerformed
-
     private void toleranceLengthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toleranceLengthActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_toleranceLengthActionPerformed
@@ -279,7 +281,7 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
             model.addRow(new Object[] {trouser.getDesignId(),trouser.getBrand(),trouser.getSize(),trouser.getFloor(),trouser.getLength(),trouser.getWaist()});
         }
-           // ImageGallery img = new ImageGallery(c);
+           ImageGallery img = new ImageGallery(c);
         }else{
             JOptionPane.showMessageDialog(this, "we do not have any clothes that you serched for", "", JOptionPane.ERROR_MESSAGE);
         }
@@ -320,6 +322,7 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -332,7 +335,6 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
     private javax.swing.JTextField lengthSize;
     private javax.swing.JButton search;
     private javax.swing.JTextField toleranceLength;
-    private javax.swing.JTextField toleranceWaist;
     private javax.swing.JTextField waistSize;
     // End of variables declaration//GEN-END:variables
 }
