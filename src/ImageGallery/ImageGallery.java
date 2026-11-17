@@ -15,7 +15,7 @@ public class ImageGallery extends JFrame {
         
         setTitle("Image Gallery");
         setSize(600, 700); 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
         
