@@ -288,7 +288,18 @@ public class Trouser_Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_searchActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
-        // TODO add your handling code here:
+        // clear all the text fields
+        lengthSize.setText("");
+        waistSize.setText("");
+        toleranceLength.setText("");
+        
+        //clear the table
+        javax.swing.table.DefaultTableModel model = 
+                (javax.swing.table.DefaultTableModel)jTable3.getModel();
+        model.setRowCount(0);
+       
+       //put the cursor back in the first field
+       lengthSize.requestFocus();
     }//GEN-LAST:event_clearActionPerformed
 
     
