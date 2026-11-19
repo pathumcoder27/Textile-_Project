@@ -236,6 +236,20 @@ public class Shirt_Dashboard extends javax.swing.JFrame {
 
     private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
         // TODO add your handling code here:
+        //  clear all the text fields
+       sleeveLengthSize.setText("");
+       shoulderSize.setText("");
+       lengthSize.setText("");
+       toleranceShoulder.setText("");
+       
+       
+       //clear the table
+       javax.swing.table.DefaultTableModel model =
+               (javax.swing.table.DefaultTableModel)jTable1.getModel();
+       model.setRowCount(0);
+       
+       // put  the cursor back in the first field
+       sleeveLengthSize.requestFocus();
         
     }//GEN-LAST:event_ClearActionPerformed
 
