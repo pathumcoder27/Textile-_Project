@@ -103,6 +103,7 @@ public class Tshirt_Dashboard extends javax.swing.JFrame {
         Clear.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Clear.setForeground(new java.awt.Color(255, 255, 255));
         Clear.setText("Clear");
+        Clear.addActionListener(this::ClearActionPerformed);
 
         Search.setBackground(new java.awt.Color(2, 46, 91));
         Search.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -247,6 +248,23 @@ public class Tshirt_Dashboard extends javax.swing.JFrame {
     private void toleranceShoulderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toleranceShoulderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_toleranceShoulderActionPerformed
+
+    private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
+        //clear all the text feilds
+       sleeveLength.setText("");
+       shoulder.setText("");
+       length.setText("");
+       toleranceShoulder.setText("");
+       
+       //clear the table
+       
+       javax.swing.table.DefaultTableModel model = (javax.swing.table.DefaultTableModel)jTable1.getModel();
+       model.setRowCount(0);
+       
+       //put the cursor back in the fristfield
+       sleeveLength.requestFocus();
+       // TODO add your handling code here:
+    }//GEN-LAST:event_ClearActionPerformed
 
     /**
      * @param args the command line arguments
